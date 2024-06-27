@@ -150,12 +150,13 @@ Powyższa klasa `OpenCLHandler` inicjalizuje kontekst OpenCL i kolejkę komend. 
 ## Dodanie obrazów i ich opis
 
 ### Server Config
-![Server Config](https://github.com/plytki/screenshare/assets/53957038/ac67262b-831c-469f-aa59-aefc586659f7)
+![Server Config](https://github.com/plytki/screenshare/assets/53957038/bfede164-de23-4921-8d0b-31bcad631119)
 
 
 To okno konfiguracyjne serwera pozwala na ustawienie następujących parametrów:
 - **Host**: Adres hosta, tutaj ustawiony na "0.0.0.0", co oznacza, że serwer będzie nasłuchiwał na wszystkich interfejsach sieciowych.
 - **Port**: Numer portu, tutaj ustawiony na 9998.
+- **Frame Rate**: Limit klatek na sekunde wysyłanych do klientów.
 - **Frame Width**: Szerokość ramki obrazu w pikselach, tutaj ustawiona na 1920.
 - **Frame Height**: Wysokość ramki obrazu w pikselach, tutaj ustawiona na 1080.
 
