@@ -49,7 +49,8 @@ User -> Shares Screen -> ClientHandler -> Processes Screen Data -> FrameReceiver
 ### Diagramy UML
 
 #### Diagram klas
-![Diagram klas](https://gist.github.com/assets/53957038/826f704a-2bba-48ed-91b3-425014bc3eb1)
+![Diagram klas](https://github.com/plytki/screenshare/assets/53957038/fcf95d56-b66f-4408-a523-f32630b933cb)
+
 
 ## Przesyłanie i interpretowanie obrazu przez klienta
 
@@ -149,7 +150,8 @@ Powyższa klasa `OpenCLHandler` inicjalizuje kontekst OpenCL i kolejkę komend. 
 ## Dodanie obrazów i ich opis
 
 ### Server Config
-![Server Config](https://gist.github.com/assets/53957038/8d2f14d3-9825-407b-8dbe-f446115facb8)
+![Server Config](https://github.com/plytki/screenshare/assets/53957038/ac67262b-831c-469f-aa59-aefc586659f7)
+
 
 To okno konfiguracyjne serwera pozwala na ustawienie następujących parametrów:
 - **Host**: Adres hosta, tutaj ustawiony na "0.0.0.0", co oznacza, że serwer będzie nasłuchiwał na wszystkich interfejsach sieciowych.
@@ -160,7 +162,8 @@ To okno konfiguracyjne serwera pozwala na ustawienie następujących parametrów
 Te parametry definiują rozdzielczość obrazu, który będzie przesyłany z serwera do klienta.
 
 ### Client Config
-![Client Config](https://gist.github.com/assets/53957038/3eb9dcb9-5ebe-4d66-bf37-eb7889e61aed)
+![Client Config](https://github.com/plytki/screenshare/assets/53957038/1c9faeea-4d66-43df-8279-3c0d7e9e8d8f)
+
 
 To okno konfiguracyjne klienta pozwala na ustawienie następujących parametrów:
 - **Host**: Adres hosta serwera, tutaj ustawiony na "host1.plytki.cc".
