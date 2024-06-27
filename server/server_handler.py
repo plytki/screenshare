@@ -24,7 +24,7 @@ class ServerHandler:
         frame_processor (FrameProcessor): The handler for processing frames.
     """
 
-    def __init__(self, host, port, frame_width, frame_height):
+    def __init__(self, host, port, frame_width, frame_height, frame_rate=60):
         """
         Initializes the ServerHandler with the given host, port, frame width, and frame height.
 
@@ -38,7 +38,7 @@ class ServerHandler:
         self.port = port
         self.frame_width = frame_width
         self.frame_height = frame_height
-        self.camera_handler = CameraHandler(frame_width, frame_height)
+        self.camera_handler = CameraHandler(frame_width, frame_height, frame_rate)
         self.frame_processor = FrameProcessor(frame_width, frame_height)
         self.server_socket = None
         self.running = False

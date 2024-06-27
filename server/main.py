@@ -27,25 +27,31 @@ class ServerGUI:
         self.port_entry.grid(row=1, column=1, padx=10, pady=5)
         self.port_entry.insert(0, "9998")
 
+        # Frame Rate
+        tk.Label(self.root, text="Frame Rate:").grid(row=2, column=0, padx=10, pady=5)
+        self.fps_entry = tk.Entry(self.root)
+        self.fps_entry.grid(row=2, column=1, padx=10, pady=5)
+        self.fps_entry.insert(0, "60")
+
         # Frame Width
-        tk.Label(self.root, text="Frame Width:").grid(row=2, column=0, padx=10, pady=5)
+        tk.Label(self.root, text="Frame Width:").grid(row=3, column=0, padx=10, pady=5)
         self.width_entry = tk.Entry(self.root)
-        self.width_entry.grid(row=2, column=1, padx=10, pady=5)
+        self.width_entry.grid(row=3, column=1, padx=10, pady=5)
         self.width_entry.insert(0, "1920")
 
         # Frame Height
-        tk.Label(self.root, text="Frame Height:").grid(row=3, column=0, padx=10, pady=5)
+        tk.Label(self.root, text="Frame Height:").grid(row=4, column=0, padx=10, pady=5)
         self.height_entry = tk.Entry(self.root)
-        self.height_entry.grid(row=3, column=1, padx=10, pady=5)
+        self.height_entry.grid(row=4, column=1, padx=10, pady=5)
         self.height_entry.insert(0, "1080")
 
         # Start Button
         self.start_button = tk.Button(self.root, text="Start Server", command=self.start_server)
-        self.start_button.grid(row=4, column=0, pady=10)
+        self.start_button.grid(row=5, column=0, pady=10)
 
         # Stop Button
         self.stop_button = tk.Button(self.root, text="Stop Server", command=self.stop_server, state=tk.DISABLED)
-        self.stop_button.grid(row=4, column=1, pady=10)
+        self.stop_button.grid(row=5, column=1, pady=10)
 
     def start_server(self):
         if self.is_running:
@@ -56,9 +62,10 @@ class ServerGUI:
         port = int(self.port_entry.get())
         frame_width = int(self.width_entry.get())
         frame_height = int(self.height_entry.get())
+        frame_rate = int(self.fps_entry.get())
 
         try:
-            self.server_handler = ServerHandler(host, port, frame_width, frame_height)
+            self.server_handler = ServerHandler(host, port, frame_width, frame_height, frame_rate)
             self.server_thread = threading.Thread(target=self.run_server)
             self.server_thread.start()
             self.is_running = True

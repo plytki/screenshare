@@ -12,17 +12,19 @@ class CameraHandler:
         camera (dxcam.Camera): The camera object from the dxcam library.
     """
 
-    def __init__(self, frame_width, frame_height):
+    def __init__(self, frame_width, frame_height, frame_rate):
         """
         Initializes the CameraHandler with the given frame width and frame height.
 
         Args:
             frame_width (int): The width of the frames to be grabbed.
             frame_height (int): The height of the frames to be grabbed.
+            frame_rate (int): The frame rate limit.
         """
         self.frame_width = frame_width
         self.frame_height = frame_height
         self.camera = dxcam.create(output_color="BGRA")  # Initialize the camera with BGRA color format
+        self.camera.start(target_fps=frame_rate)
 
     def grab_frame(self):
         """
@@ -31,10 +33,10 @@ class CameraHandler:
         Returns:
             np.ndarray: The grabbed frame.
         """
-        return self.camera.grab()  # Grab a frame from the camera
+        return self.camera.get_latest_frame()  # Grab a frame from the camera
 
     def stop_camera(self):
         """
         Stop the camera.
         """
-        self.camera.stop()  # Stop the camera
+        del self.camera  # Stop the camera
