@@ -61,7 +61,6 @@ class ServerHandler:
         height = self.frame_height
         resolution_message = f"{width}x{height}"
         client_socket.sendall(resolution_message.encode())
-        print("resolution sent")
 
     def handle_client(self, client_socket):
         """
